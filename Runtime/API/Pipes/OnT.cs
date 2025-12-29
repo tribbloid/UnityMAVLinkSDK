@@ -1,15 +1,13 @@
 #nullable enable
-using System.Collections.Generic;
 using System.Linq;
-using MAVLinkAPI.API;
 
-namespace MAVLinkAPI.API.Fn
+namespace MAVLinkAPI.API.Pipes
 {
-    public class OnT<T> : Pipe<RxMessage<T>> where T : struct
+    public class OnT<T> : FromMsg<RxMessage<T>> where T : struct
     {
-        public readonly Pipe<MAVLink.MAVLinkMessage> Prev;
+        public readonly Pipe<MAVLink.MAVLinkMessage, MAVLink.MAVLinkMessage> Prev;
 
-        public OnT(Pipe<MAVLink.MAVLinkMessage> prev)
+        public OnT(Pipe<MAVLink.MAVLinkMessage, MAVLink.MAVLinkMessage> prev)
         {
             Prev = prev;
         }

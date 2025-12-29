@@ -77,14 +77,11 @@ namespace MAVLinkAPI.API.UI
         {
             if (poseProvider.ActiveFeed == null) return;
 
-            var uplinks = poseProvider.ActiveFeed.Updater.Sources.Keys;
+            var uplink = poseProvider.ActiveFeed.Updater.Uplink;
 
-            foreach (var uplink in uplinks)
-            {
-                var info = uplink + "\n" + uplink.Metric.Histogram;
+            var info = uplink + "\n" + uplink.Metric.Histogram;
 
-                Debug.Log(info);
-            }
+            Debug.Log(info);
         }
     }
 }

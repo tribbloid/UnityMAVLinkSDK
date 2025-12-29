@@ -16,7 +16,7 @@ namespace MAVLinkAPI.API.Feature
             this Uplink uplink
         )
         {
-            var getAttitudeQ = Pipe.On<MAVLink.mavlink_attitude_t>()
+            var getAttitudeQ = MsgPipe.On<MAVLink.mavlink_attitude_t>()
                 .Select((_, msg) =>
                 {
                     var data = msg.Data;
@@ -38,7 +38,7 @@ namespace MAVLinkAPI.API.Feature
         )
         {
             // var backup = Pipe.On<MAVLink.mavlink_attitude_quaternion_cov_t>(); TODO: switch to this for health check
-            var getAttitudeQ = Pipe.On<MAVLink.mavlink_attitude_quaternion_t>()
+            var getAttitudeQ = MsgPipe.On<MAVLink.mavlink_attitude_quaternion_t>()
                 .Select((_, msg) =>
                 {
                     var data = msg.Data;
@@ -99,20 +99,36 @@ namespace MAVLinkAPI.API.Feature
 
             public Reader<object> Updater => _updater.Lazy(() =>
             {
-                return WatchDog
-                    .SelectMany((_, v) =>
-                        {
-                            LastHeartBeat.Value = v.RxTime;
-                            return new List<object> { };
-                        }
-                    )
-                    .Union(
-                        AttitudeReader.SelectMany((_, v) =>
-                        {
-                            LastAttitude.Value = v;
-                            return new List<object> { };
-                        })
-                    );
+                var newSources = new Dictionary<Uplink, Pipe<MAVLink.MAVLinkMessage, object>>();
+
+                void Add(Uplink uplink, Pipe<MAVLink.MAVLinkMessage, object> pipe)
+                {
+                    if (newSources.TryGetValue(uplink, out var existing))
+                        newSources[uplink] = existing.Cat(pipe);
+                    else
+                        newSources[uplink] = pipe;
+                }
+
+                Add(
+                    WatchDog.Pair.Key,
+                    WatchDog.Pair.Value.SelectMany((_, v) =>
+                    {
+                        LastHeartBeat.Value = v.RxTime;
+                        return new List<object> { };
+                    })
+                );
+
+                Add(
+                    AttitudeReader.Pair.Key,
+                    AttitudeReader.Pair.Value.SelectMany((_, v) =>
+                    {
+                        LastAttitude.Value = v;
+                        return new List<object> { };
+                    })
+                );
+
+                var combined = newSources.Single();
+                return new Reader<object>(combined);
             });
 
 
@@ -124,7 +140,13 @@ namespace MAVLinkAPI.API.Feature
             public override void DoClean()
             {
                 base.DoClean();
-                foreach (var uplink in Updater.Sources.Keys) uplink.Dispose();
+                var uplinks = new HashSet<Uplink>
+                {
+                    WatchDog.Uplink,
+                    AttitudeReader.Uplink
+                };
+
+                foreach (var uplink in uplinks) uplink.Dispose();
             }
 
             public override IEnumerable<string> GetStatusDetail()

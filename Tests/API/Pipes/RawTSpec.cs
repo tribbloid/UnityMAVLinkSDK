@@ -1,7 +1,7 @@
 #nullable enable
 using System.Collections.Generic;
 using MAVLinkAPI.API;
-using MAVLinkAPI.API.Fn;
+using MAVLinkAPI.API.Pipes;
 using MAVLinkAPI.Routing;
 using NUnit.Framework;
 
@@ -14,7 +14,7 @@ namespace MAVLinkAPI.Tests.API.Pipes
         public void Process_EmitsInputMessage()
         {
             var raw = new RawT();
-            var message = Pipe.MockHeartbeat();
+            var message = Mock.MockHeartbeat();
 
             var result = raw.Process(message);
 
@@ -26,7 +26,7 @@ namespace MAVLinkAPI.Tests.API.Pipes
         [Test]
         public void ReadRaw_UsesRawTPipe()
         {
-            var message = Pipe.MockHeartbeat();
+            var message = Mock.MockHeartbeat();
             var uplink = new Uplink.Dummy(new List<MAVLink.MAVLinkMessage> { message });
 
             var reader = uplink.ReadRaw();

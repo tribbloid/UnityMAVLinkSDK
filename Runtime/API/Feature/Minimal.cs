@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading;
 using MAVLinkAPI.Routing;
 using MAVLinkAPI.Util;
@@ -32,9 +33,9 @@ namespace MAVLinkAPI.API.Feature
             // this will return an empty reader that respond to heartbeat and request target to send all data
             // will fail if heartbeat is not received within 2 seconds
 
-            var rawReader = uplink
-                .On<MAVLink.mavlink_heartbeat_t>()
-                .Select((_, msg) =>
+            var rawReader = uplink.Read(
+                MsgPipe.On<MAVLink.mavlink_heartbeat_t>()
+                    .Select((_, msg) =>
                     {
                         // var heartbeatBack = ctx.Msg.Data;
                         uplink.WriteData(Const.Ack);
@@ -69,8 +70,8 @@ namespace MAVLinkAPI.API.Feature
                         // uplink.WriteData(setInterval);
 
                         return msg;
-                    }
-                );
+                    })
+            );
 
             var count = new AtomicInt();
 

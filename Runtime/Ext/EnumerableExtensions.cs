@@ -29,7 +29,16 @@ namespace MAVLinkAPI.Ext
         {
             if (first == null) return second;
             if (second == null) return first;
+
             return first.Union(second);
+        }
+
+        public static IEnumerable<T>? ConcatNullSafe<T>(this IEnumerable<T>? first, IEnumerable<T>? second)
+        {
+            if (first == null) return second;
+            if (second == null) return first;
+
+            return first.Concat(second);
         }
     }
 }

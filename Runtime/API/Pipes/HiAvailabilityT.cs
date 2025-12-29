@@ -1,10 +1,8 @@
 #nullable enable
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using MAVLinkAPI.API;
 
-namespace MAVLinkAPI.API.Fn
+namespace MAVLinkAPI.API.Pipes
 {
     /**
      * works similar to UnionT, but with the following verification routine:
@@ -20,7 +18,11 @@ namespace MAVLinkAPI.API.Fn
      * - if a MsgState is not verified and passed a long deadline: it should be considered lost:
      *   Emit an error and increment the error count, MsgState is removed from the cache queue
      */
-    public class HighAvailabilityT<T> : Pipe<RxMessage<T>>.LeftAndRight
+    public class HiAvailabilityT<TIn, TMsg> :
+        Pipe<TIn, RxMessage<TMsg>>.LeftAndRight<
+            Pipe<TIn, RxMessage<TMsg>>,
+            Pipe<TIn, RxMessage<TMsg>>
+        >
     {
         public record MsgKey(
             Signature Sig,
@@ -60,70 +62,25 @@ namespace MAVLinkAPI.API.Fn
         public int WarningCount { get; private set; }
         public int ErrorCount { get; private set; }
 
-        public HighAvailabilityT() : this(TimeSpan.FromSeconds(0.5), TimeSpan.FromSeconds(2))
+        public HiAvailabilityT() : this(TimeSpan.FromSeconds(0.5), TimeSpan.FromSeconds(2))
         {
         }
 
-        public HighAvailabilityT(TimeSpan staleThreshold, TimeSpan lostThreshold)
+        public HiAvailabilityT(TimeSpan staleThreshold, TimeSpan lostThreshold)
         {
             StaleThreshold = staleThreshold;
             LostThreshold = lostThreshold;
         }
 
-        protected override IDIndexed<CaseFn> MkTopics()
+        protected override List<RxMessage<TMsg>>? PrimaryFn(TIn input)
         {
-            var leftIndex = Left.Topics.Index;
-            var rightIndex = Right.Topics.Index;
+            var leftMessages = Left.Process(input);
+            var rightMessages = Right.Process(input);
 
-            var allKeys = leftIndex.Keys.Union(rightIndex.Keys);
-            var newTopics = new Dictionary<uint, CaseFn>();
-
-            foreach (var id in allKeys)
-            {
-                leftIndex.TryGetValue(id, out var leftCase);
-                rightIndex.TryGetValue(id, out var rightCase);
-
-                CaseFn topic = message =>
-                {
-                    var leftMessages = leftCase != null ? leftCase(message) : null;
-                    var rightMessages = rightCase != null ? rightCase(message) : null;
-
-                    List<RxMessage<T>> result;
-                    lock (_lock)
-                    {
-                        result = new List<RxMessage<T>>();
-
-                        if (leftMessages != null)
-                        {
-                            foreach (var m in HandleChannelMessages(leftMessages, true))
-                                result.Add(m);
-                        }
-
-                        if (rightMessages != null)
-                        {
-                            foreach (var m in HandleChannelMessages(rightMessages, false))
-                                result.Add(m);
-                        }
-                    }
-
-                    return result.Count == 0 ? null : result;
-                };
-
-                newTopics[id] = topic;
-            }
-
-            return new IDIndexed<CaseFn>(newTopics);
-        }
-
-        protected override CaseFn OtherCase => message =>
-        {
-            var leftMessages = Left.Process(message);
-            var rightMessages = Right.Process(message);
-
-            List<RxMessage<T>> result;
+            List<RxMessage<TMsg>> result;
             lock (_lock)
             {
-                result = new List<RxMessage<T>>();
+                result = new List<RxMessage<TMsg>>();
 
                 foreach (var m in HandleChannelMessages(leftMessages, true))
                     result.Add(m);
@@ -133,9 +90,9 @@ namespace MAVLinkAPI.API.Fn
             }
 
             return result.Count == 0 ? null : result;
-        };
+        }
 
-        private IEnumerable<RxMessage<T>> HandleChannelMessages(IEnumerable<RxMessage<T>> messages, bool fromLeft)
+        private IEnumerable<RxMessage<TMsg>> HandleChannelMessages(IEnumerable<RxMessage<TMsg>> messages, bool fromLeft)
         {
             foreach (var msg in messages)
             {
@@ -199,7 +156,7 @@ namespace MAVLinkAPI.API.Fn
             }
         }
 
-        private static MsgKey ComputeKey(RxMessage<T> message)
+        private static MsgKey ComputeKey(RxMessage<TMsg> message)
         {
             var sig = message.Signature;
             var hash = new HashCode();

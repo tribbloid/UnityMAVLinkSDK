@@ -8,11 +8,6 @@ namespace MAVLinkAPI.Util
 {
     public static class FromAnyThread
     {
-        private readonly struct Unit
-        {
-            public static readonly Unit Value = new();
-        }
-
         private static int? _mainThreadId;
         private static MainThreadDispatcher _dispatcher;
         private static readonly ConcurrentQueue<Action> _queue = new();

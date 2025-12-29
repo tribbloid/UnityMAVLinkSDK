@@ -1,4 +1,5 @@
 #nullable enable
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MAVLinkAPI.API;
@@ -17,7 +18,6 @@ namespace MAVLinkAPI.Routing
         }
 
         // only has 1 impl, so this interface is optional
-
 
         public abstract int BytesToRead { get; }
 
@@ -40,7 +40,7 @@ namespace MAVLinkAPI.Routing
         // having multiple readers polling at the same time is dangerous, but we won't give a warning or error
         //  the burden is on the user
 
-        public Reader<T> Read<T>(Pipe<T> pipe)
+        public Reader<T> Read<T>(Pipe<MAVLink.MAVLinkMessage, T> pipe)
         {
             var reader = new Reader<T>(this, pipe);
             SubscribedReaders.Add(reader);
@@ -49,32 +49,46 @@ namespace MAVLinkAPI.Routing
 
         public Reader<MAVLink.MAVLinkMessage> ReadRaw()
         {
-            return Read(Pipe.Raw);
+            return Read(MsgPipe.Raw);
         }
 
         public Reader<RxMessage<T>> On<T>() where T : struct
         {
-            return Read(Pipe.On<T>());
+            return Read(MsgPipe.On<T>());
         }
 
         // Mock Uplink that can provide a stream of messages for testing
         public new class Dummy : Uplink
         {
-            private readonly IEnumerable<MAVLink.MAVLinkMessage> _messages;
+            private readonly Queue<MAVLink.MAVLinkMessage> _messages;
 
             public Dummy(IEnumerable<MAVLink.MAVLinkMessage> messages)
             {
-                _messages = messages;
+                _messages = new Queue<MAVLink.MAVLinkMessage>(messages);
             }
 
+            public Dummy(params MAVLink.MAVLinkMessage[] messages) :
+                this((IEnumerable<MAVLink.MAVLinkMessage>)(
+                        messages ??
+                        Array.Empty<MAVLink.MAVLinkMessage>())
+                )
+            {
+            }
 
-            public Dummy() : this(new List<MAVLink.MAVLinkMessage>())
+            public Dummy() : this(Array.Empty<MAVLink.MAVLinkMessage>())
             {
             }
 
             public override int BytesToRead => _messages.Any() ? 100 : 0;
 
-            public override IEnumerable<MAVLink.MAVLinkMessage> RawReadSource => _messages;
+            public override IEnumerable<MAVLink.MAVLinkMessage> RawReadSource
+            {
+                get
+                {
+                    while (_messages.Any())
+                        yield return _messages.Dequeue();
+                }
+            }
 
             public override void WriteData<T>(T data) where T : struct
             {

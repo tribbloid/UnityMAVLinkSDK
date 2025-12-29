@@ -9,7 +9,8 @@ using UnityEngine.TestTools;
 
 namespace MAVLinkAPI.Tests.Util
 {
-    public class FromAnyThreadTests
+    [TestFixture]
+    public class FromAnyThreadSpec
     {
         [SetUp]
         public void SetUp()
@@ -174,10 +175,15 @@ namespace MAVLinkAPI.Tests.Util
             Assert.IsNotNull(destroyTask);
             Assert.IsFalse(destroyTask.IsCompleted);
 
+            // First yield: Let the dispatcher Update() run, which calls Destroy(obj).
             yield return null;
 
             Assert.IsTrue(destroyTask.IsCompleted);
             Assert.IsFalse(destroyTask.IsFaulted);
+
+            // Second yield: Unity.Destroy() marks objects for destruction at the end of the frame,
+            // so we need to wait for the next frame for the object to be actually destroyed.
+            yield return null;
 
             // Unity overloads == for destroyed objects.
             Assert.IsTrue(go == null);

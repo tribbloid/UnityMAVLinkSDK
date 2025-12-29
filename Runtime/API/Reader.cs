@@ -1,146 +1,42 @@
 #nullable enable
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using MAVLinkAPI.Routing;
-using MAVLinkAPI.Util.NullSafety;
+using MAVLinkAPI.Util;
 
 namespace MAVLinkAPI.API
 {
-    /**
-     * A.k.a subscription
-     */
-    public class Reader<T>
+    public class Reader<T> : Pipe<Unit, T>
     {
-        public readonly IDictionary<Uplink, Pipe<T>> Sources;
+        public KeyValuePair<Uplink, Pipe<MAVLink.MAVLinkMessage, T>> Pair;
 
-        public Reader(IDictionary<Uplink, Pipe<T>> sources)
+        public Uplink Uplink => Pair.Key;
+        public Pipe<MAVLink.MAVLinkMessage, T> Pipe => Pair.Value;
+
+        public IEnumerable<List<T>> ByMessage;
+
+        public Reader(KeyValuePair<Uplink, Pipe<MAVLink.MAVLinkMessage, T>> pair)
         {
-            Sources = sources;
+            Pair = pair;
+            ByMessage = Pair.Key.RawReadSource.Select(message => Pair.Value.Process(message));
         }
 
-        public Reader(Uplink uplink, Pipe<T> pipe) : this(
-            new Dictionary<Uplink, Pipe<T>> { { uplink, pipe } })
+        public Reader(Uplink uplink, Pipe<MAVLink.MAVLinkMessage, T> pipe) : this(
+            KeyValuePair.Create(uplink, pipe))
         {
         }
 
-        private record SubReader(KeyValuePair<Uplink, Pipe<T>> Pair)
+        public override int Pressure => Pair.Key.BytesToRead;
+
+        protected override List<T>? PrimaryFn(Unit input)
         {
-            public IEnumerable<List<T>> MkByMessage()
+            using (var byMessageItr = ByMessage.GetEnumerator())
             {
-                return Pair.Key.RawReadSource.Select(message => Pair.Value.Process(message));
+                if (byMessageItr.MoveNext())
+                    return byMessageItr.Current;
             }
 
-
-            public int BytesToRead => Pair.Key.BytesToRead;
-
-            public List<T> Drain(int leftover = 8)
-            {
-                var list = new List<T>();
-
-                using (var itr = MkByMessage().GetEnumerator())
-                {
-                    while (BytesToRead > leftover && itr.MoveNext())
-                    {
-                        var current = itr.Current;
-                        if (current != null)
-                            list.AddRange(current);
-                    }
-                }
-
-                return list;
-            }
-        }
-
-        private Maybe<IEnumerable<List<T>>> _byMessage;
-        public IEnumerable<List<T>> ByMessage => _byMessage.Lazy(MkByMessage);
-
-        private IEnumerable<List<T>> MkByMessage()
-        {
-            return Sources.SelectMany(pair => new SubReader(pair).MkByMessage());
-        }
-
-        private Maybe<IEnumerable<T>> _byOutput;
-        public IEnumerable<T> ByOutput => _byOutput.Lazy(MkByOutput);
-
-        private IEnumerable<T> MkByOutput()
-        {
-            return ByMessage.SelectMany(vs => vs);
-        }
-
-        public Reader<T2> Discard<T2>()
-        {
-            var newSources = Sources.ToDictionary(
-                pair => pair.Key,
-                pair => (Pipe<T2>)pair.Value.SelectMany<T2>((m, v) => new List<T2>()));
-            return new Reader<T2>(newSources);
-        }
-
-        public int BytesToRead => Sources.Keys.Sum(u => u.BytesToRead);
-
-        public List<T> Drain(int leftover = 8)
-        {
-            return Sources.SelectMany(pair => new SubReader(pair).Drain()).ToList();
-        }
-
-        // TODO: do we need ChunkSelectMany<T>: List<T> => List<T2>?
-
-        public Reader<T2> SelectMany<T2>(Func<MAVLink.MAVLinkMessage, T, List<T2>> fn)
-        {
-            var newSources = Sources.ToDictionary(
-                pair => pair.Key,
-                pair => (Pipe<T2>)pair.Value.SelectMany(fn));
-            return new Reader<T2>(newSources);
-        }
-
-        public Reader<T2> Select<T2>(Func<MAVLink.MAVLinkMessage, T, T2> fn)
-        {
-            var newSources = Sources.ToDictionary(
-                pair => pair.Key,
-                pair => (Pipe<T2>)pair.Value.Select(fn));
-            return new Reader<T2>(newSources);
-        }
-
-        // public Reader<object> ForEach(Action<MAVLink.MAVLinkMessage, T> ac)
-        // { TODO:// need a better name
-        //     var newSources = Sources.ToDictionary(
-        //         pair => pair.Key,
-        //         pair => (Pipe<object>)pair.Value.SelectMany((x, y) => ac(x, y); ));
-        //     return new Reader<object>(newSources);
-        // }
-
-        public Reader<T> OrElse(Reader<T> that)
-        {
-            return Combine(that, (f1, f2) => f1.OrElse(f2));
-        }
-
-        public Reader<T> Union(Reader<T> that)
-        {
-            return Combine(that, (f1, f2) => f1.Union(f2));
-        }
-
-        private Reader<T> Combine(Reader<T> that, Func<Pipe<T>, Pipe<T>, Pipe<T>> combineFn)
-        {
-            var newSources = new Dictionary<Uplink, Pipe<T>>(Sources);
-            foreach (var (uplink, pipe) in that.Sources)
-                if (newSources.TryGetValue(uplink, out var existing))
-                    newSources[uplink] = combineFn(existing, pipe);
-                else
-                    newSources[uplink] = pipe;
-
-            return new Reader<T>(newSources);
-        }
-    }
-
-
-    public static class ReaderExtensions
-    {
-        public static Reader<T> Upcast<T, T1>(this Reader<T1> reader) where T1 : T
-        {
-            var newSources = reader.Sources.ToDictionary(
-                pair => pair.Key,
-                pair => pair.Value.Upcast<T, T1>());
-            return new Reader<T>(newSources);
+            return null;
         }
     }
 }

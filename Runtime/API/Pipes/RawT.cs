@@ -1,10 +1,9 @@
 #nullable enable
 using System.Collections.Generic;
-using MAVLinkAPI.API;
 
-namespace MAVLinkAPI.API.Fn
+namespace MAVLinkAPI.API.Pipes
 {
-    public class RawT : Pipe<MAVLink.MAVLinkMessage>
+    public class RawT : FromMsg<MAVLink.MAVLinkMessage>
     {
         protected override IDIndexed<CaseFn> MkTopics()
         {
