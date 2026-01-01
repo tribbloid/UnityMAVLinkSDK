@@ -1,6 +1,7 @@
 #nullable enable
 using System.Collections.Generic;
 using MAVLinkAPI.API;
+using MAVLinkAPI.API.Pipes;
 using NUnit.Framework;
 
 namespace MAVLinkAPI.Tests.API.Pipes

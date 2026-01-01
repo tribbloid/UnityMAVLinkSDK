@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MAVLinkAPI.API;
+using MAVLinkAPI.API.Pipes;
 using MAVLinkAPI.Util;
 using MAVLinkAPI.Util.NullSafety;
 using MAVLinkAPI.Util.Resource;

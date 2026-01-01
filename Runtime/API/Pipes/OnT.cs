@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace MAVLinkAPI.API.Pipes
 {
-    public class OnT<T> : FromMsg<RxMessage<T>> where T : struct
+    public class OnT<T> : ByTopics<RxMessage<T>> where T : struct
     {
         public readonly Pipe<MAVLink.MAVLinkMessage, MAVLink.MAVLinkMessage> Prev;
 

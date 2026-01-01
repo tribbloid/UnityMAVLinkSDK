@@ -1,10 +1,9 @@
 #nullable enable
 using System;
 using System.Collections.Generic;
-using MAVLinkAPI.API.Pipes;
 using MAVLinkAPI.Util.NullSafety;
 
-namespace MAVLinkAPI.API
+namespace MAVLinkAPI.API.Pipes
 {
     public static class MsgPipe // this should become the new reader
     {
@@ -28,7 +27,7 @@ namespace MAVLinkAPI.API
         }
     }
 
-    public abstract class FromMsg<T> : Pipe<MAVLink.MAVLinkMessage, T>
+    public abstract class ByTopics<T> : Pipe<MAVLink.MAVLinkMessage, T>
     {
         public delegate List<T>? CaseFn(MAVLink.MAVLinkMessage message);
 
@@ -51,7 +50,7 @@ namespace MAVLinkAPI.API
             return OtherCase(input);
         }
 
-        public static implicit operator Func<MAVLink.MAVLinkMessage, List<T>?>(FromMsg<T> function)
+        public static implicit operator Func<MAVLink.MAVLinkMessage, List<T>?>(ByTopics<T> function)
         {
             return function.Process;
         }

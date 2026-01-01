@@ -8,7 +8,7 @@ namespace MAVLinkAPI.Tests.API.Pipes
     [TestFixture]
     public class HighAvailabilitySpec
     {
-        private class ReadHeartbeat : FromMsg<RxMessage<MAVLink.mavlink_heartbeat_t>>
+        private class ReadHeartbeat : ByTopics<RxMessage<MAVLink.mavlink_heartbeat_t>>
         {
             protected override IDIndexed<CaseFn> MkTopics()
             {

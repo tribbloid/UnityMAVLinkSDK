@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Threading;
+using MAVLinkAPI.API.Pipes;
 using MAVLinkAPI.Routing;
 using MAVLinkAPI.Util;
 using Unity.VisualScripting;

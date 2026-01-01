@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MAVLinkAPI.API;
+using MAVLinkAPI.API.Pipes;
 using MAVLinkAPI.Routing;
 using NUnit.Framework;
 
