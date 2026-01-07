@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace MAVLinkAPI.Tests.API.Pipes
 {
     [TestFixture]
-    public class HighAvailabilitySpec
+    public class RedundantSpec
     {
         private class ReadHeartbeat : ByTopics<RxMessage<MAVLink.mavlink_heartbeat_t>>
         {
@@ -18,22 +18,22 @@ namespace MAVLinkAPI.Tests.API.Pipes
             protected override CaseFn OtherCase => _ => null;
         }
 
-        private static HiAvailabilityT<MAVLink.MAVLinkMessage, MAVLink.mavlink_heartbeat_t> CreateHaLeftOnly()
+        private static Redundant<MAVLink.MAVLinkMessage, MAVLink.mavlink_heartbeat_t> CreateHaLeftOnly()
         {
             var left = MsgPipe.On<MAVLink.mavlink_heartbeat_t>();
             var right = new ReadHeartbeat();
-            return new HiAvailabilityT<MAVLink.MAVLinkMessage, MAVLink.mavlink_heartbeat_t>
+            return new Redundant<MAVLink.MAVLinkMessage, MAVLink.mavlink_heartbeat_t>
             {
                 Left = left,
                 Right = right
             };
         }
 
-        private static HiAvailabilityT<MAVLink.MAVLinkMessage, MAVLink.mavlink_heartbeat_t> CreateHaBothChannels()
+        private static Redundant<MAVLink.MAVLinkMessage, MAVLink.mavlink_heartbeat_t> CreateHaBothChannels()
         {
             var left = MsgPipe.On<MAVLink.mavlink_heartbeat_t>();
             var right = MsgPipe.On<MAVLink.mavlink_heartbeat_t>();
-            return new HiAvailabilityT<MAVLink.MAVLinkMessage, MAVLink.mavlink_heartbeat_t>
+            return new Redundant<MAVLink.MAVLinkMessage, MAVLink.mavlink_heartbeat_t>
             {
                 Left = left,
                 Right = right

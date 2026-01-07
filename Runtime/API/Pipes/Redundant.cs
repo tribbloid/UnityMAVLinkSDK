@@ -18,7 +18,7 @@ namespace MAVLinkAPI.API.Pipes
      * - if a MsgState is not verified and passed a long deadline: it should be considered lost:
      *   Emit an error and increment the error count, MsgState is removed from the cache queue
      */
-    public class HiAvailabilityT<TIn, TMsg> :
+    public class Redundant<TIn, TMsg> :
         Pipe<TIn, RxMessage<TMsg>>.LeftAndRight<
             Pipe<TIn, RxMessage<TMsg>>,
             Pipe<TIn, RxMessage<TMsg>>
@@ -62,11 +62,11 @@ namespace MAVLinkAPI.API.Pipes
         public int WarningCount { get; private set; }
         public int ErrorCount { get; private set; }
 
-        public HiAvailabilityT() : this(TimeSpan.FromSeconds(0.5), TimeSpan.FromSeconds(2))
+        public Redundant() : this(TimeSpan.FromSeconds(0.5), TimeSpan.FromSeconds(2))
         {
         }
 
-        public HiAvailabilityT(TimeSpan staleThreshold, TimeSpan lostThreshold)
+        public Redundant(TimeSpan staleThreshold, TimeSpan lostThreshold)
         {
             StaleThreshold = staleThreshold;
             LostThreshold = lostThreshold;
