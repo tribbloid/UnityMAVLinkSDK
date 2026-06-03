@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "displayName": "MAVLink API",
   "description": "A Unity package providing an API for Mavlink communication.",
-  "documentationUrl": "",
-  "changelogUrl": "https://github.com/your-username/your-repository/blob/main/Packages/ca.hpvdt.mavlinkapi/CHANGELOG.md",
-  "licensesUrl": "https://github.com/your-username/your-repository/blob/main/Packages/ca.hpvdt.mavlinkapi/LICENSE",
   "keywords": [
     "mavlink",
     "communication",
