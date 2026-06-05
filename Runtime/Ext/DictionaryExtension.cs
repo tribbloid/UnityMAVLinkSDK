@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MAVLinkAPI.Ext
+namespace MAVLinkSDK.Ext
 {
     public static class DictionaryExtensions
     {

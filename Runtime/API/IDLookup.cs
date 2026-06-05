@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MAVLinkAPI.API
+namespace MAVLinkSDK.API
 {
     public class IDLookup
     {

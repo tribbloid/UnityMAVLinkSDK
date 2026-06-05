@@ -1,10 +1,10 @@
 using System;
-using MAVLinkAPI.Ext;
+using MAVLinkSDK.Ext;
 using NUnit.Framework;
 
 // Assuming your BuildList class is in this namespace
 
-namespace MAVLinkAPI.Tests.Ext
+namespace MAVLinkSDK.Tests.Ext
 {
     [TestFixture]
     public class ListOfSpec

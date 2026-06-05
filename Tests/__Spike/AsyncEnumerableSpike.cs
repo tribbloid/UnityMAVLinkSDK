@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using UnityEngine.TestTools;
 
-namespace MAVLinkAPI.Tests.__Spike
+namespace MAVLinkSDK.Tests.__Spike
 {
     public class AsyncEnumerableSpike
     {

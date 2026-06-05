@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using MAVLinkAPI.Util;
+using MAVLinkSDK.Util;
 
-namespace MAVLinkAPI.API
+namespace MAVLinkSDK.API
 {
     public record IDIndexed<T>
     {

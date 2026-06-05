@@ -1,7 +1,7 @@
-using MAVLinkAPI.Util.NullSafety;
+using MAVLinkSDK.Util.NullSafety;
 using UnityEngine;
 
-namespace MAVLinkAPI.Util.Resource
+namespace MAVLinkSDK.Util.Resource
 {
     public class LifetimeBinding : MonoBehaviour
     {

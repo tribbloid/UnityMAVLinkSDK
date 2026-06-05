@@ -1,7 +1,7 @@
 using System.Text;
 using UnityEngine;
 
-namespace MAVLinkAPI.Ext
+namespace MAVLinkSDK.Ext
 {
     public static class GameObjectExtensions
     {

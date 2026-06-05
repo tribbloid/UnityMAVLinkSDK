@@ -1,11 +1,11 @@
 using System.Collections;
-using MAVLinkAPI._Spike;
+using MAVLinkSDK._Spike;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.UI;
 
-namespace MAVLinkAPI.Tests.Spike
+namespace MAVLinkSDK.Tests.Spike
 {
     public class DummyLayoutTest
     {

@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 using Autofill;
-using MAVLinkAPI.UI.Tables;
-using MAVLinkAPI.Util.NullSafety;
+using MAVLinkSDK.UI.Tables;
+using MAVLinkSDK.Util.NullSafety;
 using UnityEngine;
 
-namespace MAVLinkAPI.Util.Resource.UI
+namespace MAVLinkSDK.Util.Resource.UI
 {
     public class ServiceTableController : LifetimeBinding
     {

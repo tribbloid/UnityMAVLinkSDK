@@ -1,9 +1,9 @@
 #nullable enable
 using System;
 using System.Collections.Generic;
-using MAVLinkAPI.Util.NullSafety;
+using MAVLinkSDK.Util.NullSafety;
 
-namespace MAVLinkAPI.API.Pipes
+namespace MAVLinkSDK.API.Pipes
 {
     public static class MsgPipe // this should become the new reader
     {

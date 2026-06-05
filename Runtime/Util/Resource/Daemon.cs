@@ -2,10 +2,10 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using MAVLinkAPI.Util.NullSafety;
+using MAVLinkSDK.Util.NullSafety;
 using UnityEngine;
 
-namespace MAVLinkAPI.Util.Resource
+namespace MAVLinkSDK.Util.Resource
 {
     public abstract class Daemon : Cleanable
     {

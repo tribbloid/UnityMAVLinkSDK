@@ -1,9 +1,9 @@
 // using System;
 // using System.Reflection;
 // using System.Text;
-// using MAVLinkAPI.Util.Text;
+// using MAVLinkSDK.Util.Text;
 //
-// namespace MAVLinkAPI.Ext
+// namespace MAVLinkSDK.Ext
 // {
 //     internal static class ExceptionExtensions
 //     {

@@ -1,8 +1,8 @@
 #nullable enable
 using System;
-using MAVLinkAPI.Util.NullSafety;
+using MAVLinkSDK.Util.NullSafety;
 
-namespace MAVLinkAPI.API
+namespace MAVLinkSDK.API
 {
     public record Component(
         // our target sysid

@@ -2595,7 +2595,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MAVLinkAPI.UI.Controller.ToggleDetail, ca.hpvdt.mavlinkapi
+        m_TargetAssemblyTypeName: MAVLinkSDK.UI.Controller.ToggleDetail, ca.hpvdt.MAVLinkSDK
         m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
@@ -2904,7 +2904,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MAVLinkAPI.UI.Controller.ToggleDetail, ca.hpvdt.mavlinkapi
+        m_TargetAssemblyTypeName: MAVLinkSDK.UI.Controller.ToggleDetail, ca.hpvdt.MAVLinkSDK
         m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
@@ -6074,8 +6074,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1161893056345704773}
-        m_TargetAssemblyTypeName: MAVLinkAPI.Util.Resource.UI.ServiceTableController,
-          ca.hpvdt.mavlinkapi.Runtime
+        m_TargetAssemblyTypeName: MAVLinkSDK.Util.Resource.UI.ServiceTableController,
+          ca.hpvdt.MAVLinkSDK.Runtime
         m_MethodName: AddDummy
         m_Mode: 1
         m_Arguments:
@@ -6436,7 +6436,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MAVLinkAPI.UI.Controller.ToggleDetail, ca.hpvdt.mavlinkapi
+        m_TargetAssemblyTypeName: MAVLinkSDK.UI.Controller.ToggleDetail, ca.hpvdt.MAVLinkSDK
         m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:
@@ -6907,7 +6907,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MAVLinkAPI.API.UI.AhrsFeedController, ca.hpvdt.mavlinkapi.Runtime
+        m_TargetAssemblyTypeName: MAVLinkSDK.API.UI.AhrsFeedController, ca.hpvdt.MAVLinkSDK.Runtime
         m_MethodName: PrintInfo
         m_Mode: 1
         m_Arguments:
@@ -7443,8 +7443,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1161893056345704773}
-        m_TargetAssemblyTypeName: MAVLinkAPI.Util.Resource.UI.ServiceTableController,
-          ca.hpvdt.mavlinkapi.Runtime
+        m_TargetAssemblyTypeName: MAVLinkSDK.Util.Resource.UI.ServiceTableController,
+          ca.hpvdt.MAVLinkSDK.Runtime
         m_MethodName: AddDummy_Fail
         m_Mode: 1
         m_Arguments:
@@ -7811,7 +7811,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MAVLinkAPI.UI.Controller.ToggleDetail, ca.hpvdt.mavlinkapi
+        m_TargetAssemblyTypeName: MAVLinkSDK.UI.Controller.ToggleDetail, ca.hpvdt.MAVLinkSDK
         m_MethodName: Toggle
         m_Mode: 1
         m_Arguments:

@@ -1,4 +1,4 @@
-namespace MAVLinkAPI.__generated
+namespace MAVLinkSDK.__generated
 {
     internal class __doc
     {

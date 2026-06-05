@@ -4,12 +4,12 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using MAVLinkAPI.log4net;
+using MAVLinkSDK.log4net;
 
 // dns, ip address
 // tcplistner
 
-namespace MAVLinkAPI.Comms
+namespace MAVLinkSDK.Comms
 {
     public class TcpSerial : CommsBase, ICommsSerial, IDisposable
     {

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
-using MAVLinkAPI.log4net;
+using MAVLinkSDK.log4net;
 using Microsoft.Win32.SafeHandles;
 
-namespace MAVLinkAPI.Comms
+namespace MAVLinkSDK.Comms
 {
     public class CommsSerialPipe : ICommsSerial
     {

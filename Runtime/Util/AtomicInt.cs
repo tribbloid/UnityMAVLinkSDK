@@ -1,6 +1,6 @@
 using System.Threading;
 
-namespace MAVLinkAPI.Util
+namespace MAVLinkSDK.Util
 {
     public class Atomic<T>
     {

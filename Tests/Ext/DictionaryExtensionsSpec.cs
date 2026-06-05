@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using MAVLinkAPI.Ext;
+using MAVLinkSDK.Ext;
 using NUnit.Framework;
 
-namespace MAVLinkAPI.Tests.Ext
+namespace MAVLinkSDK.Tests.Ext
 {
     public class DictionaryExtensionsSpec
     {

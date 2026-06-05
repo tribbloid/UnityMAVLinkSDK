@@ -1,8 +1,8 @@
 using NUnit.Framework;
 using UnityEngine;
-using MAVLinkAPI.Ext;
+using MAVLinkSDK.Ext;
 
-namespace MAVLinkAPI.Tests.Ext
+namespace MAVLinkSDK.Tests.Ext
 {
     public class GameObjectExtensionsSpec
     {

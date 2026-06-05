@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Ports;
 
-namespace MAVLinkAPI.Util
+namespace MAVLinkSDK.Util
 {
     public class ForkingStreamWrapper : Stream
     {

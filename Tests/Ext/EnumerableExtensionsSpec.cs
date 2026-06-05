@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using MAVLinkAPI.Ext;
-using MAVLinkAPI.Util;
+using MAVLinkSDK.Ext;
+using MAVLinkSDK.Util;
 using NUnit.Framework;
 
-namespace MAVLinkAPI.Tests.Ext
+namespace MAVLinkSDK.Tests.Ext
 {
     [TestFixture]
     [TestOf(typeof(EnumerableExtensions))]

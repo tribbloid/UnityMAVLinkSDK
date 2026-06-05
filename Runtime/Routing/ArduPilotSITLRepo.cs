@@ -1,6 +1,6 @@
 using System;
 
-namespace MAVLinkAPI.Routing
+namespace MAVLinkSDK.Routing
 {
     public enum SitlArch
     {

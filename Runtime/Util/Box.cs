@@ -1,7 +1,7 @@
 #nullable enable
 using System;
 
-namespace MAVLinkAPI.Util
+namespace MAVLinkSDK.Util
 {
     // represents a non-nullable wrapper of a datum of type
     // if T is primitive/struct, it is the only null-safe way to bypass type signature of LazyInitializer.EnsureInitialized

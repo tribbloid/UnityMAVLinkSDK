@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using MAVLinkAPI.UI.Tables;
+using MAVLinkSDK.UI.Tables;
 using UnityEngine;
 
-namespace MAVLinkAPI.Example
+namespace MAVLinkSDK.Example
 {
     public class TableLayoutExampleController : MonoBehaviour
     {

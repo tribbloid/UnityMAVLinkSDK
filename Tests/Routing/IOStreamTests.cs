@@ -1,7 +1,7 @@
-using MAVLinkAPI.Routing;
+using MAVLinkSDK.Routing;
 using NUnit.Framework;
 
-namespace MAVLinkAPI.Tests.Routing
+namespace MAVLinkSDK.Tests.Routing
 {
     public class IOStreamTests
     {

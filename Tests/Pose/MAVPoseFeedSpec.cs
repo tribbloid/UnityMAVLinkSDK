@@ -1,12 +1,12 @@
 // using System.Linq;
 // using System.Threading;
-// using MAVLinkAPI.Pose;
-// using MAVLinkAPI.Routing;
-// using MAVLinkAPI.Util;
+// using MAVLinkSDK.Pose;
+// using MAVLinkSDK.Routing;
+// using MAVLinkSDK.Util;
 // using NUnit.Framework;
 // using UnityEngine;
 //
-// namespace MAVLinkAPI.Tests.Pose
+// namespace MAVLinkSDK.Tests.Pose
 // {
 //     [Ignore("need SITL")]
 //     public class MAVPoseFeedSpec

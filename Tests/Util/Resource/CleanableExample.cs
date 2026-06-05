@@ -1,8 +1,8 @@
 #nullable enable
-using MAVLinkAPI.Util;
-using MAVLinkAPI.Util.Resource;
+using MAVLinkSDK.Util;
+using MAVLinkSDK.Util.Resource;
 
-namespace MAVLinkAPI.Tests.Util.Resource
+namespace MAVLinkSDK.Tests.Util.Resource
 {
     public class CleanableExample : Cleanable
     {

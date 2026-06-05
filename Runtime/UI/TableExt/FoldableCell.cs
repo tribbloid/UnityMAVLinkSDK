@@ -2,13 +2,13 @@
 using System;
 using System.Collections;
 using Autofill;
-using MAVLinkAPI.UI.Tables;
-using MAVLinkAPI.Util.NullSafety;
+using MAVLinkSDK.UI.Tables;
+using MAVLinkSDK.Util.NullSafety;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace MAVLinkAPI.UI.TableExt
+namespace MAVLinkSDK.UI.TableExt
 {
     [RequireComponent(typeof(RectTransform))]
     public class FoldableCell : UIBehaviour

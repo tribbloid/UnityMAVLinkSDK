@@ -1,4 +1,4 @@
-namespace MAVLinkAPI.API
+namespace MAVLinkSDK.API
 {
     public static class Mock
     {

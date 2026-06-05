@@ -1,9 +1,9 @@
 using System.Linq;
-using MAVLinkAPI.UI.Tables;
+using MAVLinkSDK.UI.Tables;
 using UnityEditor;
 using UnityEngine;
 
-namespace MAVLinkAPI.Editor.UI.Tables
+namespace MAVLinkSDK.Editor.UI.Tables
 {
     [CustomEditor(typeof(TableLayout))]
     public class TableLayoutEditor : UnityEditor.Editor

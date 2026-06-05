@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MAVLinkAPI.Util
+namespace MAVLinkSDK.Util
 {
     public static class UnityQuaternionExtensions
     {

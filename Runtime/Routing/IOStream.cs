@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
 using System.Threading;
-using MAVLinkAPI.Comms;
-using MAVLinkAPI.Util.NullSafety;
+using MAVLinkSDK.Comms;
+using MAVLinkSDK.Util.NullSafety;
 using UnityEngine;
 
-namespace MAVLinkAPI.Routing
+namespace MAVLinkSDK.Routing
 {
     public class IOStream : IDisposable
     {

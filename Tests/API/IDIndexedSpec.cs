@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using MAVLinkAPI.API;
-using MAVLinkAPI.Util.Text;
+using MAVLinkSDK.API;
+using MAVLinkSDK.Util.Text;
 using NUnit.Framework;
 
-namespace MAVLinkAPI.Tests.API
+namespace MAVLinkSDK.Tests.API
 {
     public class IDIndexedSpec
     {

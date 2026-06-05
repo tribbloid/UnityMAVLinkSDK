@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace MAVLinkAPI.Comms
+namespace MAVLinkSDK.Comms
 {
     public class CommsStream : Stream
     {

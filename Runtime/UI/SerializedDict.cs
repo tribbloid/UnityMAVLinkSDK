@@ -2,10 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MAVLinkAPI.Util.NullSafety;
+using MAVLinkSDK.Util.NullSafety;
 using UnityEngine;
 
-namespace MAVLinkAPI.UI
+namespace MAVLinkSDK.UI
 {
     [Serializable]
     public class SerializedDict<TK, TV> : Dictionary<TK, TV>

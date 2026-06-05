@@ -1,8 +1,8 @@
 using System;
-using MAVLinkAPI.Util.NullSafety;
+using MAVLinkSDK.Util.NullSafety;
 using NUnit.Framework;
 
-namespace MAVLinkAPI.Tests.Util.Maybe
+namespace MAVLinkSDK.Tests.Util.Maybe
 {
     [TestFixture]
     public class MaybeSpec

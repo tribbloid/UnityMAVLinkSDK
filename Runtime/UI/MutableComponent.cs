@@ -1,8 +1,8 @@
 using System;
-using MAVLinkAPI.Util.NullSafety;
+using MAVLinkSDK.Util.NullSafety;
 using UnityEngine;
 
-namespace MAVLinkAPI.UI
+namespace MAVLinkSDK.UI
 {
     [Serializable]
     public class MutableComponent<T> where T : Component

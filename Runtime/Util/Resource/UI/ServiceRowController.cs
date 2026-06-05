@@ -3,15 +3,15 @@ using System;
 using System.Collections;
 using System.Threading.Tasks;
 using Autofill;
-using MAVLinkAPI.UI;
-using MAVLinkAPI.UI.Tables;
-using MAVLinkAPI.Util.NullSafety;
+using MAVLinkSDK.UI;
+using MAVLinkSDK.UI.Tables;
+using MAVLinkSDK.Util.NullSafety;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MAVLinkAPI.Util.Resource.UI
+namespace MAVLinkSDK.Util.Resource.UI
 {
     public class ServiceRowController : MonoBehaviour
     {

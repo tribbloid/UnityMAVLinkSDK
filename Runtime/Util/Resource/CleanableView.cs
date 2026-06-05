@@ -1,7 +1,7 @@
 #nullable enable
 using System;
 
-namespace MAVLinkAPI.Util.Resource
+namespace MAVLinkSDK.Util.Resource
 {
     public class CleanableView<T> : Cleanable where T : IDisposable
     {

@@ -2,7 +2,7 @@
 using System;
 using System.Threading;
 
-namespace MAVLinkAPI.Util
+namespace MAVLinkSDK.Util
 {
     public static class LazyHelper
     {

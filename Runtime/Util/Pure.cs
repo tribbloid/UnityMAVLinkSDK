@@ -1,6 +1,6 @@
 using System;
 
-namespace MAVLinkAPI.Util
+namespace MAVLinkSDK.Util
 {
     /**
      * pure function

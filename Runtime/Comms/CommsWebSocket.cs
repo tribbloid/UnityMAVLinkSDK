@@ -6,10 +6,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-using MAVLinkAPI.log4net;
+using MAVLinkSDK.log4net;
 using Exception = System.Exception;
 
-namespace MAVLinkAPI.Comms
+namespace MAVLinkSDK.Comms
 {
     public class WebSocket : CommsBase, ICommsSerial, IDisposable
     {

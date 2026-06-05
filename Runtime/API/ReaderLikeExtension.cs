@@ -2,10 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MAVLinkAPI.Util;
+using MAVLinkSDK.Util;
 
 
-namespace MAVLinkAPI.API
+namespace MAVLinkSDK.API
 {
     public static class ReaderLikeExtensions
     {

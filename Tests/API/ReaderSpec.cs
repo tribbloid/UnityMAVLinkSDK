@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
-using MAVLinkAPI.API;
-using MAVLinkAPI.API.Pipes;
-using MAVLinkAPI.Routing;
+using MAVLinkSDK.API;
+using MAVLinkSDK.API.Pipes;
+using MAVLinkSDK.Routing;
 using NUnit.Framework;
 
-namespace MAVLinkAPI.Tests.API
+namespace MAVLinkSDK.Tests.API
 {
     public class ReaderSpec
     {

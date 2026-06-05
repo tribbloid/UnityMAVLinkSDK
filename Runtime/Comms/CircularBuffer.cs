@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MAVLinkAPI.Comms
+namespace MAVLinkSDK.Comms
 {
     public class CircularBuffer<T>
     {

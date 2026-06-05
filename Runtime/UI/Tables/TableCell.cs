@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MAVLinkAPI.UI.Tables
+namespace MAVLinkSDK.UI.Tables
 {
     [RequireComponent(typeof(RectTransform))]
     public class TableCell : HorizontalLayoutGroup

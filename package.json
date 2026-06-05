@@ -1,7 +1,7 @@
 {
-  "name": "ca.hpvdt.mavlinkapi",
+  "name": "ca.hpvdt.mavlinksdk",
   "version": "1.0.0",
-  "displayName": "MAVLink API",
+  "displayName": "MAVLinkSDK",
   "description": "A Unity package providing an API for Mavlink communication.",
   "keywords": [
     "mavlink",
@@ -30,6 +30,6 @@
     "com.jonagill.autofill": "1.0.7"
   },
   "testables": [
-    "ca.hpvdt.mavlinkapi.Tests"
+    "ca.hpvdt.MAVLinkSDK.Tests"
   ]
 }

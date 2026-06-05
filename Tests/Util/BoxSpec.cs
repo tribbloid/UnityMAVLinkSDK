@@ -1,8 +1,8 @@
 using System;
-using MAVLinkAPI.Util;
+using MAVLinkSDK.Util;
 using NUnit.Framework;
 
-namespace MAVLinkAPI.Tests.Util
+namespace MAVLinkSDK.Tests.Util
 {
     [TestFixture]
     [TestOf(typeof(Box))]

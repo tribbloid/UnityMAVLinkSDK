@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using MAVLinkAPI.Routing;
-using MAVLinkAPI.Util;
+using MAVLinkSDK.Routing;
+using MAVLinkSDK.Util;
 using UnityEngine;
 
-namespace MAVLinkAPI.API
+namespace MAVLinkSDK.API
 {
     public sealed class AutoTune
     {

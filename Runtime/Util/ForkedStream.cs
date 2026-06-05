@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MAVLinkAPI.Util
+namespace MAVLinkSDK.Util
 {
     // TODO: use it to create multiple subscriber to a mavlink stream
     public class ForkedStream : Stream

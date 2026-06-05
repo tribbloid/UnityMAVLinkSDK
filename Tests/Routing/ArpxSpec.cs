@@ -1,9 +1,9 @@
 using NUnit.Framework;
-using MAVLinkAPI.Routing.Relay;
+using MAVLinkSDK.Routing.Relay;
 using System.Collections.Generic;
-using MAVLinkAPI.Util.Text;
+using MAVLinkSDK.Util.Text;
 
-namespace MAVLinkAPI.Tests.Routing
+namespace MAVLinkSDK.Tests.Routing
 {
     public static class ArpxSpec
     {

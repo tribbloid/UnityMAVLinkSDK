@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace MAVLinkAPI.Util.NullSafety
+namespace MAVLinkSDK.Util.NullSafety
 {
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Class)]
     // [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Class)] TODO: enable this

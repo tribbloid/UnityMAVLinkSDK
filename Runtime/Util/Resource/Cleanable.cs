@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Random = System.Random;
 
-namespace MAVLinkAPI.Util.Resource
+namespace MAVLinkSDK.Util.Resource
 {
     public abstract class Cleanable : IDisposable
     {

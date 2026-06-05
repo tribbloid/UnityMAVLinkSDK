@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace MAVLinkAPI.Comms
+namespace MAVLinkSDK.Comms
 {
     public interface ICommsSerial : IDisposable
     {

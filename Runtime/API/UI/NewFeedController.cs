@@ -2,15 +2,15 @@
 using System;
 using System.Threading.Tasks;
 using Autofill;
-using MAVLinkAPI.API.Feature;
-using MAVLinkAPI.Routing;
-using MAVLinkAPI.Util.NullSafety;
-using MAVLinkAPI.Util.Resource;
+using MAVLinkSDK.API.Feature;
+using MAVLinkSDK.Routing;
+using MAVLinkSDK.Util.NullSafety;
+using MAVLinkSDK.Util.Resource;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MAVLinkAPI.API.UI
+namespace MAVLinkSDK.API.UI
 {
     public class NewFeedController : MonoBehaviour
     {

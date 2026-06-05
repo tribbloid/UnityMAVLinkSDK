@@ -1,6 +1,6 @@
 {
-  "name": "ca.hpvdt.mavlinkapi.Runtime",
-  "rootNamespace": "MAVLinkAPI",
+  "name": "ca.hpvdt.MAVLinkSDK.Runtime",
+  "rootNamespace": "MAVLinkSDK",
   "references": [
     "Unity.TextMeshPro",
     "YamlDotNet",

@@ -3,11 +3,11 @@
  */
 
 using System.Collections;
-using MAVLinkAPI.UI.Tables;
+using MAVLinkSDK.UI.Tables;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MAVLinkAPI.Example
+namespace MAVLinkSDK.Example
 {
     public class DynamicRowsExampleController : MonoBehaviour
     {

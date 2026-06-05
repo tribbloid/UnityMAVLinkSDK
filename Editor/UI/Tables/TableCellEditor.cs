@@ -1,7 +1,7 @@
-using MAVLinkAPI.UI.Tables;
+using MAVLinkSDK.UI.Tables;
 using UnityEditor;
 
-namespace MAVLinkAPI.Editor.UI.Tables
+namespace MAVLinkSDK.Editor.UI.Tables
 {
     [CustomEditor(typeof(TableCell))]
     public class TableCellEditor : UnityEditor.Editor

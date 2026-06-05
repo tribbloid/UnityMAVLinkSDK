@@ -1,4 +1,4 @@
-namespace MAVLinkAPI.Util
+namespace MAVLinkSDK.Util
 {
     public readonly struct Unit
     {

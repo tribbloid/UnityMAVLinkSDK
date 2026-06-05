@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace MAVLinkAPI.Comms
+namespace MAVLinkSDK.Comms
 {
     /// <summary>
     /// use AppendBuffer to populate the Read buffer, and WriteCallback to send

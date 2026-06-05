@@ -1,4 +1,4 @@
-namespace MAVLinkAPI.Comms
+namespace MAVLinkSDK.Comms
 {
     internal class __doc
     {

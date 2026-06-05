@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace MAVLinkAPI.Util.Resource
+namespace MAVLinkSDK.Util.Resource
 {
     public class Lifetime : Registry
     {

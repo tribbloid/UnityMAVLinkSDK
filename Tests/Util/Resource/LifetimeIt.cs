@@ -1,10 +1,10 @@
 using System.Collections;
-using MAVLinkAPI.Util.Resource;
+using MAVLinkSDK.Util.Resource;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace MAVLinkAPI.Tests.Util.Resource
+namespace MAVLinkSDK.Tests.Util.Resource
 {
     public class LifetimeIt
     {

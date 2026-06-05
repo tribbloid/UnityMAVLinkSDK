@@ -2,10 +2,10 @@
 // using System.Diagnostics;
 // using System.Threading;
 // using System.Threading.Tasks;
-// using MAVLinkAPI.Util;
+// using MAVLinkSDK.Util;
 // using NUnit.Framework;
 //
-// namespace MAVLinkAPI.Tests.Util
+// namespace MAVLinkSDK.Tests.Util
 // {
 //     [TestFixture]
 //     public class ExternalProcessManagerTests

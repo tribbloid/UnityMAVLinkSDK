@@ -1,8 +1,8 @@
 {
-  "name": "ca.hpvdt.mavlinkapi.Tests",
-  "rootNamespace": "MAVLinkAPI",
+  "name": "ca.hpvdt.MAVLinkSDK.Tests",
+  "rootNamespace": "MAVLinkSDK",
   "references": [
-    "ca.hpvdt.mavlinkapi.Runtime",
+    "ca.hpvdt.MAVLinkSDK.Runtime",
     "UnityEngine.TestRunner",
     "UnityEditor.TestRunner",
     "YamlDotNet",

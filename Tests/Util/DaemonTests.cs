@@ -3,11 +3,11 @@ using System;
 using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
-using MAVLinkAPI.Util.Resource;
+using MAVLinkSDK.Util.Resource;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace MAVLinkAPI.Tests.Util
+namespace MAVLinkSDK.Tests.Util
 {
     public class DaemonTests
     {

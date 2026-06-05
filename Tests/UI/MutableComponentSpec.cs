@@ -1,11 +1,11 @@
 using System.Collections;
-using MAVLinkAPI.UI;
+using MAVLinkSDK.UI;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using TMPro;
 
-namespace MAVLinkAPI.Tests.UI
+namespace MAVLinkSDK.Tests.UI
 {
     public class MutableComponentSpec
     {

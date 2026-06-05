@@ -1,8 +1,8 @@
-using MAVLinkAPI.Util.Text;
+using MAVLinkSDK.Util.Text;
 using NUnit.Framework;
 using System;
 
-namespace MAVLinkAPI.Tests.Util
+namespace MAVLinkSDK.Tests.Util
 {
     [TestFixture]
     public class TextBlockSpec

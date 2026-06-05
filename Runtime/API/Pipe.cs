@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MAVLinkAPI.Ext;
+using MAVLinkSDK.Ext;
 
-namespace MAVLinkAPI.API
+namespace MAVLinkSDK.API
 {
     public abstract class Pipe<TIn, TOut> : IPipe<TIn, TOut>
     {

@@ -1,7 +1,7 @@
 // using System.IO;
 // using UnityEngine;
 //
-// namespace MAVLinkAPI.Process
+// namespace MAVLinkSDK.Process
 // {
 //     internal static class InternalServerProcess
 //     {

@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace MAVLinkAPI.Util
+namespace MAVLinkSDK.Util
 {
     public static class FromAnyThread
     {
@@ -25,7 +25,7 @@ namespace MAVLinkAPI.Util
 
             _mainThreadId = Thread.CurrentThread.ManagedThreadId;
 
-            var go = new GameObject("MAVLinkAPI.FromAnyThread");
+            var go = new GameObject("MAVLinkSDK.FromAnyThread");
             UnityEngine.Object.DontDestroyOnLoad(go);
             _dispatcher = go.AddComponent<MainThreadDispatcher>();
         }
@@ -41,7 +41,7 @@ namespace MAVLinkAPI.Util
             if (_dispatcher == null)
             {
                 throw new InvalidOperationException(
-                    "FromAnyThread is not initialized. Call MAVLinkAPI.Util.FromAnyThread.Initialize() on Unity main thread before using it from background threads.");
+                    "FromAnyThread is not initialized. Call MAVLinkSDK.Util.FromAnyThread.Initialize() on Unity main thread before using it from background threads.");
             }
 
             _queue.Enqueue(action);

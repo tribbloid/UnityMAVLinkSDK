@@ -6,12 +6,12 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using MAVLinkAPI.log4net;
+using MAVLinkSDK.log4net;
 
 // dns, ip address
 // tcplistner
 
-namespace MAVLinkAPI.Comms
+namespace MAVLinkSDK.Comms
 {
     public class UdpSerialConnect : CommsBase, ICommsSerial, IDisposable
     {

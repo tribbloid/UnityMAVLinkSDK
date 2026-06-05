@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using MAVLinkAPI.API;
-using MAVLinkAPI.Util;
-using MAVLinkAPI.Util.NullSafety;
-using MAVLinkAPI.Util.Resource;
+using MAVLinkSDK.API;
+using MAVLinkSDK.Util;
+using MAVLinkSDK.Util.NullSafety;
+using MAVLinkSDK.Util.Resource;
 using UnityEngine;
-using Component = MAVLinkAPI.API.Component;
+using Component = MAVLinkSDK.API.Component;
 
-namespace MAVLinkAPI.Routing
+namespace MAVLinkSDK.Routing
 {
     public class DirectUplink : Uplink // TODO: shoudl be "Endpoint"
     {

@@ -2,9 +2,9 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using MAVLinkAPI.Util.Resource;
+using MAVLinkSDK.Util.Resource;
 
-namespace MAVLinkAPI.Routing.Relay
+namespace MAVLinkSDK.Routing.Relay
 {
     public class ExternalProcessManager : Cleanable
     {

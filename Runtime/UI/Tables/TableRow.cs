@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MAVLinkAPI.UI.Tables
+namespace MAVLinkSDK.UI.Tables
 {
     [RequireComponent(typeof(RectTransform))]
     public class TableRow : MonoBehaviour //LayoutGroup

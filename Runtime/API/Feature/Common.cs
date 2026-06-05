@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MAVLinkAPI.API.Pipes;
-using MAVLinkAPI.Routing;
-using MAVLinkAPI.Util;
-using MAVLinkAPI.Util.NullSafety;
-using MAVLinkAPI.Util.Resource;
+using MAVLinkSDK.API.Pipes;
+using MAVLinkSDK.Routing;
+using MAVLinkSDK.Util;
+using MAVLinkSDK.Util.NullSafety;
+using MAVLinkSDK.Util.Resource;
 using UnityEngine;
 
-namespace MAVLinkAPI.API.Feature
+namespace MAVLinkSDK.API.Feature
 {
     // TODO: how about making it a normal class with metrics?
     public static class Common

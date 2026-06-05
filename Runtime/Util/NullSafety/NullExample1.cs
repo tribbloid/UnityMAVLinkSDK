@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MAVLinkAPI.Util.NullSafety
+namespace MAVLinkSDK.Util.NullSafety
 {
     [Required]
     public class NullExample1 : MonoBehaviour

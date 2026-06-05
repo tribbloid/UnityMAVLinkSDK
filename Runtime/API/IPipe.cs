@@ -1,7 +1,7 @@
 #nullable enable
 using System.Collections.Generic;
 
-namespace MAVLinkAPI.API
+namespace MAVLinkSDK.API
 {
     public interface IPipe<in TIn, out TOut>
     {

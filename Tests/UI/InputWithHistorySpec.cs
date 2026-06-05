@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using MAVLinkAPI.UI;
+using MAVLinkSDK.UI;
 using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace MAVLinkAPI.Tests.UI
+namespace MAVLinkSDK.Tests.UI
 {
     public class InputWithHistorySpec
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace MAVLinkAPI.log4net
+namespace MAVLinkSDK.log4net
 {
     internal interface ILog
     {

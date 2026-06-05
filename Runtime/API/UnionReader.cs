@@ -1,10 +1,10 @@
 #nullable enable
 using System.Collections.Generic;
 using System.Linq;
-using MAVLinkAPI.Routing;
-using MAVLinkAPI.Util;
+using MAVLinkSDK.Routing;
+using MAVLinkSDK.Util;
 
-namespace MAVLinkAPI.API
+namespace MAVLinkSDK.API
 {
     [System.Obsolete("SuperReaderV2<T> is deprecated. Use UnionT of Reader<T> directly (per Uplink) instead.")]
     public class UnionReader<T> : Pipe<Unit, T>

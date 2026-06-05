@@ -1,11 +1,11 @@
 #nullable enable
 using System.Collections.Generic;
-using MAVLinkAPI.API;
-using MAVLinkAPI.API.Pipes;
-using MAVLinkAPI.Routing;
+using MAVLinkSDK.API;
+using MAVLinkSDK.API.Pipes;
+using MAVLinkSDK.Routing;
 using NUnit.Framework;
 
-namespace MAVLinkAPI.Tests.API.Pipes
+namespace MAVLinkSDK.Tests.API.Pipes
 {
     [TestFixture]
     public class RawTSpec

@@ -1,11 +1,11 @@
 #nullable enable
 using System;
-using MAVLinkAPI.API.Feature;
+using MAVLinkSDK.API.Feature;
 using UnityEngine;
 using UnityEngine.Experimental.XR.Interaction;
 using UnityEngine.SpatialTracking;
 
-namespace MAVLinkAPI.API.UI
+namespace MAVLinkSDK.API.UI
 {
     public class NavPoseProvider : BasePoseProvider
     {

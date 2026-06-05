@@ -1,7 +1,7 @@
 #nullable enable
 using System.Collections.Generic;
 
-namespace MAVLinkAPI.Util.NullSafety
+namespace MAVLinkSDK.Util.NullSafety
 {
     public static class NullableExtensions
     {

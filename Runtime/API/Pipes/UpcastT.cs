@@ -1,7 +1,7 @@
 #nullable enable
 using System.Collections.Generic;
 
-namespace MAVLinkAPI.API.Pipes
+namespace MAVLinkSDK.API.Pipes
 {
     public class UpcastT<Ti2, To2, TIn, TOut> : Pipe<Ti2, To2>
         where TOut : To2

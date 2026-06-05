@@ -2,7 +2,7 @@
 using System;
 using System.Threading;
 
-namespace MAVLinkAPI.Util.NullSafety
+namespace MAVLinkSDK.Util.NullSafety
 {
     public struct Maybe<T>
     {

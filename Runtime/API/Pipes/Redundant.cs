@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MAVLinkAPI.API.Pipes
+namespace MAVLinkSDK.API.Pipes
 {
     /**
      * works similar to UnionT, but with the following verification routine:

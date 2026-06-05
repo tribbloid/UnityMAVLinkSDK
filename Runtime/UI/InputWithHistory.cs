@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Autofill;
-using MAVLinkAPI.Ext;
-using MAVLinkAPI.Util.NullSafety;
+using MAVLinkSDK.Ext;
+using MAVLinkSDK.Util.NullSafety;
 using UnityEngine;
 using TMPro;
 
-namespace MAVLinkAPI.UI
+namespace MAVLinkSDK.UI
 {
     public class InputWithHistory : MonoBehaviour
     {

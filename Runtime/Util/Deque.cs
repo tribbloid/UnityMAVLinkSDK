@@ -1,7 +1,7 @@
 #nullable enable
 using System.Collections.Generic;
 
-namespace MAVLinkAPI.Util
+namespace MAVLinkSDK.Util
 {
     public class Deque<T> : Queue<T>
     {

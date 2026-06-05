@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using MAVLinkAPI.Util.Text;
+using MAVLinkSDK.Util.Text;
 using NUnit.Framework;
 
-namespace MAVLinkAPI.Tests.Ext
+namespace MAVLinkSDK.Tests.Ext
 {
 // NUnit Test Class
 

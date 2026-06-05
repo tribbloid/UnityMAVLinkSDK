@@ -2,13 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MAVLinkAPI.API;
-using MAVLinkAPI.API.Pipes;
-using MAVLinkAPI.Util;
-using MAVLinkAPI.Util.NullSafety;
-using MAVLinkAPI.Util.Resource;
+using MAVLinkSDK.API;
+using MAVLinkSDK.API.Pipes;
+using MAVLinkSDK.Util;
+using MAVLinkSDK.Util.NullSafety;
+using MAVLinkSDK.Util.Resource;
 
-namespace MAVLinkAPI.Routing
+namespace MAVLinkSDK.Routing
 {
     public abstract class Uplink : Cleanable
     {

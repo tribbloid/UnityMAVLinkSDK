@@ -7,12 +7,12 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using MAVLinkAPI.log4net;
+using MAVLinkSDK.log4net;
 
 // dns, ip address
 // tcplistner
 
-namespace MAVLinkAPI.Comms
+namespace MAVLinkSDK.Comms
 {
     public class CommsNTRIP : CommsBase, ICommsSerial, IDisposable
     {

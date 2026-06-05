@@ -1,9 +1,9 @@
 #nullable enable
 using System.Collections.Generic;
 using System.Linq;
-using MAVLinkAPI.Util;
+using MAVLinkSDK.Util;
 
-namespace MAVLinkAPI.Ext
+namespace MAVLinkSDK.Ext
 {
     public static class EnumerableExtensions
     {

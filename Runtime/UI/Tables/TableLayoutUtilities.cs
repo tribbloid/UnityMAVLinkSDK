@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace MAVLinkAPI.UI.Tables
+namespace MAVLinkSDK.UI.Tables
 {
     public static class TableLayoutUtilities
     {

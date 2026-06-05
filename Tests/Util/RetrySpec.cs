@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using MAVLinkAPI.Util;
+using MAVLinkSDK.Util;
 using NUnit.Framework;
 
-namespace MAVLinkAPI.Tests.Util
+namespace MAVLinkSDK.Tests.Util
 {
     [TestFixture]
     public class RetrySpec
@@ -109,7 +109,7 @@ namespace MAVLinkAPI.Tests.Util
             Assert.That(exception.Message, Does.StartWith("All 4 attempt(s) failed:"));
             Assert.That(exception.Message, Does.Contain("- (x2) Failure on item 1"));
             Assert.That(exception.Message, Does.Contain("- (x2) Failure on item 2"));
-            Assert.That(exception.Source, Is.EqualTo("ca.hpvdt.mavlinkapi.Runtime"));
+            Assert.That(exception.Source, Is.EqualTo("ca.hpvdt.MAVLinkSDK.Runtime"));
         }
     }
 }

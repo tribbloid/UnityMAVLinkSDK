@@ -1,7 +1,7 @@
 #nullable enable
 using System.Collections.Generic;
 
-namespace MAVLinkAPI.API.Pipes
+namespace MAVLinkSDK.API.Pipes
 {
     public class RawT : ByTopics<MAVLink.MAVLinkMessage>
     {

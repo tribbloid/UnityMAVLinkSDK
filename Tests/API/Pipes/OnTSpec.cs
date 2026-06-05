@@ -1,10 +1,10 @@
 #nullable enable
 using System.Collections.Generic;
-using MAVLinkAPI.API;
-using MAVLinkAPI.API.Pipes;
+using MAVLinkSDK.API;
+using MAVLinkSDK.API.Pipes;
 using NUnit.Framework;
 
-namespace MAVLinkAPI.Tests.API.Pipes
+namespace MAVLinkSDK.Tests.API.Pipes
 {
     [TestFixture]
     public class OnTSpec

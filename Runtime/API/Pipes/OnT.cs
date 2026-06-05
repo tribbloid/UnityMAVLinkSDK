@@ -1,7 +1,7 @@
 #nullable enable
 using System.Linq;
 
-namespace MAVLinkAPI.API.Pipes
+namespace MAVLinkSDK.API.Pipes
 {
     public class OnT<T> : ByTopics<RxMessage<T>> where T : struct
     {

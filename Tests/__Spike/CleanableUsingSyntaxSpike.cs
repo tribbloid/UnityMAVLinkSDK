@@ -1,9 +1,9 @@
 using System;
-using MAVLinkAPI.Tests.Util.Resource;
+using MAVLinkSDK.Tests.Util.Resource;
 using Microsoft.Win32.SafeHandles;
 using NUnit.Framework;
 
-namespace MAVLinkAPI.Tests.__Spike
+namespace MAVLinkSDK.Tests.__Spike
 {
     public class CleanableUsingSyntaxSpike
     {

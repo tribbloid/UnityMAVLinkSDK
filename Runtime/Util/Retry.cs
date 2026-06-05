@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
-using MAVLinkAPI.Ext;
-using MAVLinkAPI.Util.Text;
+using MAVLinkSDK.Ext;
+using MAVLinkSDK.Util.Text;
 using Debug = UnityEngine.Debug;
 
-namespace MAVLinkAPI.Util
+namespace MAVLinkSDK.Util
 {
     public class Retry<TI>
     {

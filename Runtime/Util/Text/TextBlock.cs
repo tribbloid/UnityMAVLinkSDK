@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace MAVLinkAPI.Util.Text
+namespace MAVLinkSDK.Util.Text
 {
     public class TextBlock
     {

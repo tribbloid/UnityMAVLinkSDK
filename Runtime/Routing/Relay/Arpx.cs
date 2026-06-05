@@ -9,7 +9,7 @@ using YamlDotNet.Serialization.NamingConventions;
 using Newtonsoft.Json.Serialization;
 using YamlDotNet.Serialization.TypeInspectors;
 
-namespace MAVLinkAPI.Routing.Relay
+namespace MAVLinkSDK.Routing.Relay
 {
     public static class Arpx
     {

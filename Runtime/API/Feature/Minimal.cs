@@ -1,12 +1,12 @@
 using System;
 using System.Linq;
 using System.Threading;
-using MAVLinkAPI.API.Pipes;
-using MAVLinkAPI.Routing;
-using MAVLinkAPI.Util;
+using MAVLinkSDK.API.Pipes;
+using MAVLinkSDK.Routing;
+using MAVLinkSDK.Util;
 using Unity.VisualScripting;
 
-namespace MAVLinkAPI.API.Feature
+namespace MAVLinkSDK.API.Feature
 {
     public static class Minimal
     {

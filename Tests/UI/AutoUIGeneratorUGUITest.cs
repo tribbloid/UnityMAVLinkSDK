@@ -1,14 +1,14 @@
 #nullable enable
 using System;
 using System.Linq;
-using MAVLinkAPI._Spike;
-using MAVLinkAPI.UI;
+using MAVLinkSDK._Spike;
+using MAVLinkSDK.UI;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
-namespace MAVLinkAPI.Tests.UI
+namespace MAVLinkSDK.Tests.UI
 {
     [Serializable]
     public struct PlayerData

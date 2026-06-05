@@ -2,9 +2,9 @@
 
 using System;
 using System.Collections.Generic;
-using MAVLinkAPI.Util;
+using MAVLinkSDK.Util;
 
-namespace MAVLinkAPI.API.Pipes
+namespace MAVLinkSDK.API.Pipes
 {
     /**
      * add a small delay to `Base`, message emit from it are first commit into a cyclic buffer

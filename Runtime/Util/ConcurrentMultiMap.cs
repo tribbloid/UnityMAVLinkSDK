@@ -1,7 +1,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 
-namespace MAVLinkAPI.Util
+namespace MAVLinkSDK.Util
 {
     public class ConcurrentMultiMap<TKey, TValue>
     {
