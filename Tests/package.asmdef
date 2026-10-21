@@ -4,7 +4,6 @@
   "references": [
     "ca.hpvdt.MAVLinkSDK.Runtime",
     "UnityEngine.TestRunner",
-    "UnityEditor.TestRunner",
     "YamlDotNet",
     "Unity.TextMeshPro"
   ],

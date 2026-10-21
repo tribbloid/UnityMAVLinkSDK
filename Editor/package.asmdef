@@ -2,9 +2,7 @@
   "name": "ca.hpvdt.MAVLinkSDK.Editor",
   "rootNamespace": "MAVLinkSDK",
   "references": [
-    "ca.hpvdt.MAVLinkSDK.Runtime",
-    "UnityEngine.TestRunner",
-    "UnityEditor.TestRunner"
+    "ca.hpvdt.MAVLinkSDK.Runtime"
   ],
   "includePlatforms": [
     "Editor"
