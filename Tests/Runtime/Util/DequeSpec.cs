@@ -1,4 +1,3 @@
-using MAVLinkSDK.API;
 using MAVLinkSDK.Util;
 using NUnit.Framework;
 

@@ -2,7 +2,6 @@
 using System;
 using System.Linq;
 using MAVLinkSDK._Spike;
-using MAVLinkSDK.UI;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;

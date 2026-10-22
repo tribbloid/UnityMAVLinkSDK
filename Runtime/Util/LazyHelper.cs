@@ -1,7 +1,4 @@
 #nullable enable
-using System;
-using System.Threading;
-
 namespace MAVLinkSDK.Util
 {
     public static class LazyHelper

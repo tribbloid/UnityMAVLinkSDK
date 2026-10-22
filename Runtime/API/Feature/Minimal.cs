@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Threading;
 using MAVLinkSDK.API.Pipes;
 using MAVLinkSDK.Routing;
