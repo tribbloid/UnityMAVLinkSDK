@@ -12,7 +12,6 @@ namespace MAVLinkSDK._Spike
         private object _boxed;
         // public object Boxed => LazyHelper.EnsureInitialized(ref _boxed, () => original);
 
-        [SerializeField]
         public T Value
         {
             get => (T)_boxed;
