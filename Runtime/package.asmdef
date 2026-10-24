@@ -5,7 +5,7 @@
     "Unity.TextMeshPro",
     "YamlDotNet",
     "StandaloneFileBrowser",
-    "UnityEngine.SpatialTracking",
+    "Unity.InputSystem",
     "Unity.VisualScripting.Core",
     "Autofill.Runtime"
   ],
