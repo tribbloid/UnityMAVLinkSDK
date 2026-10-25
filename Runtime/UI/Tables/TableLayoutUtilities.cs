@@ -49,7 +49,7 @@ namespace MAVLinkSDK.UI.Tables
             if (canvas == null)
             {
                 // Attempt to find a canvas anywhere
-                canvas = UnityEngine.Object.FindObjectOfType<Canvas>();
+                canvas = UnityEngine.Object.FindFirstObjectByType<Canvas>();
 
                 if (canvas != null) return canvas.transform;
             }
@@ -69,7 +69,7 @@ namespace MAVLinkSDK.UI.Tables
             UnityEditor.Undo.RegisterCreatedObjectUndo(canvasGameObject, "Create Canvas");
 #endif
 
-            var eventSystem = UnityEngine.Object.FindObjectOfType<EventSystem>();
+            var eventSystem = UnityEngine.Object.FindFirstObjectByType<EventSystem>();
 
             if (eventSystem == null)
             {

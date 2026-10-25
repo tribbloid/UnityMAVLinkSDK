@@ -13,8 +13,8 @@ namespace MAVLinkSDK.UI
         [Serializable]
         public class Pair
         {
-            [Required] public TK key;
-            [Required] public TV value;
+            [Required] public TK key = default!;
+            [Required] public TV value = default!;
         }
 
         [SerializeField] public List<Pair> pairs = new();
