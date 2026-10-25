@@ -4,7 +4,6 @@
   "references": [
     "Unity.TextMeshPro",
     "YamlDotNet",
-    "StandaloneFileBrowser",
     "Unity.InputSystem",
     "Unity.VisualScripting.Core",
     "Autofill.Runtime"
