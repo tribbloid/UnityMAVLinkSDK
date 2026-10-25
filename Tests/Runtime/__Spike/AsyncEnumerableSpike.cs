@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using UnityEngine.TestTools;
@@ -12,7 +11,7 @@ namespace MAVLinkSDK.Tests.__Spike
         private class MyAsyncEnumerable : IAsyncEnumerable<string>
         {
             public async IAsyncEnumerator<string> GetAsyncEnumerator(
-                [EnumeratorCancellation] System.Threading.CancellationToken cancellationToken = default)
+                System.Threading.CancellationToken cancellationToken = default)
             {
                 yield return "Hello";
                 await Task.Delay(100, cancellationToken);
