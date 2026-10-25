@@ -186,7 +186,7 @@ namespace MAVLinkSDK.Comms
         private bool socketio = false;
         private string _url;
 
-        private async void Open(string url)
+        private void Open(string url)
         {
             _url = url;
             client = new ClientWebSocket();
@@ -195,7 +195,7 @@ namespace MAVLinkSDK.Comms
             {
                 //https://github.com/socketio/engine.io-protocol
                 // socket.io
-                client.SendAsync(new ArraySegment<byte>("2probe".ToCharArray().Select(a => (byte)a).ToArray()),
+                _ = client.SendAsync(new ArraySegment<byte>("2probe".ToCharArray().Select(a => (byte)a).ToArray()),
                     WebSocketMessageType.Text, true, CancellationToken.None);
             }
         }

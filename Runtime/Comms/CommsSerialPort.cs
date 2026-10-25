@@ -199,7 +199,7 @@ namespace MAVLinkSDK.Comms
 
         private static string portnamenice = "";
 
-        public new static string[] GetPortNames()
+        public static string[] GetPortNames()
         {
             // prevent hammering
             lock (locker)
