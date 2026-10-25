@@ -33,7 +33,7 @@ namespace MAVLinkSDK.Util.NullSafety
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void CheckField()
         {
-            var gameObjs = Object.FindObjectsOfType<MonoBehaviour>();
+            var gameObjs = Object.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
             foreach (var gameObj in gameObjs)
             {
                 var type = gameObj.GetType();

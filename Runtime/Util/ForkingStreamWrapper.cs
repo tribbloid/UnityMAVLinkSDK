@@ -10,7 +10,6 @@ namespace MAVLinkSDK.Util
         private SerialPort _serialPort;
         private List<MemoryStream> _forks = new();
         private byte[] _buffer = new byte[4096];
-        private int _readPosition = 0;
         private object _lock = new();
 
         public ForkingStreamWrapper(SerialPort serialPort)

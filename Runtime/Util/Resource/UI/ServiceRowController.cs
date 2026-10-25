@@ -74,8 +74,8 @@ namespace MAVLinkSDK.Util.Resource.UI
         {
             SetIcon(_underlying!);
 
-            terminate1.onValueChanged.AddListener(delegate { CleanIfBothTerminating(); });
-            terminate2.onValueChanged.AddListener(delegate { CleanIfBothTerminating(); });
+            terminate1.onValueChanged.AddListener(delegate { _ = CleanIfBothTerminating(); });
+            terminate2.onValueChanged.AddListener(delegate { _ = CleanIfBothTerminating(); });
 
             yield return new WaitForEndOfFrame();
 
